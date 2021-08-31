@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
-  name: hello-run
+  generateName: hello-run-
 spec:
   resources: {}
   serviceAccountName: pipeline

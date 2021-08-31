@@ -1,11 +1,22 @@
+# Openshift Pipelines Demo
+
+## Setup
+
+[Tekton CLI Install](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.7/html/cli_tools/pipelines-cli-tkn)
+
+
+```
+oc new-project pipelines-demo
+```
+
 ## Create and run a simple task
 
 ### Commands
 
 ```
-oc project pipelines-demo
-
 oc apply -f tasks/task.yaml
+
+tkn task list
 
 tkn task start --showlog hello
 ```
@@ -16,14 +27,18 @@ tkn task start --showlog hello
 ### Pipeline Diagram
 ![Pipeline Diagram](images/pipeline-diagram.png)
 
+### Create tasks
 
-### Commands
 ```
 oc create -f tasks/apply_manifest_task.yaml
 oc create -f tasks/update_deployment_task.yaml
 
 tkn task ls
+```
 
+### Create PVC for workspace and pipelines
+
+```
 oc create -f resources/persistent_volume_claim.yaml
 
 oc create -f pipeline/pipeline.yaml
@@ -62,5 +77,5 @@ tkn pipelinerun ls
 ### Get application route
 
 ```
-oc get route pipelines-vote-ui --template='http://{{.spec.host}}
+oc get route pipelines-vote-ui --template='http://{{.spec.host}}'
 ```
