@@ -79,3 +79,21 @@ tkn pipelinerun ls
 ```
 oc get route pipelines-vote-ui --template='http://{{.spec.host}}'
 ```
+
+## Resources
+
+Lab repo this demo was pulled from: https://github.com/openshift-labs/lab-tekton-pipelines
+
+To learn more about OpenShift Pipelines and Tekton, the resources below can provide information on everything from getting started to more advanced concepts.
+
+OpenShift Pipelines Webpage: https://www.openshift.com/learn/topics/pipelines
+
+OpenShift Pipelines Documentation: https://openshift.github.io/pipelines-docs/docs/index.html
+
+Tekton Official Webpage: https://tekton.dev
+
+Tekton Pipelines GitHub: https://github.com/tektoncd/pipeline
+
+Tekton CLI GitHub: https://github.com/tektoncd/cli
+
+For examples of Tekton pipelines and tasks, visit the tektoncd/catalog GitHub repository: https://github.com/tektoncd/catalog
